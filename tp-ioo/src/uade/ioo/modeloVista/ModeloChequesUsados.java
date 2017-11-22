@@ -11,24 +11,28 @@ public class ModeloChequesUsados extends AbstractTableModel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private AdministradorPagos modelo;
+	private AdministradorPagos modelo;	
+	
+	public ModeloChequeUsados (AdministradorPagos modelo) {
+		this.modelo = modelo;
+	}
 	
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return 10;
+		return modelo.lista.get(0).size();
 	}
 
 	@Override
 	public int getRowCount() {
 		// TODO Auto-generated method stub
-		return 10;
+		return modelo.lista.getSize();
 	}
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 
-		return "hola";
+		return modelo.lista.get(rowIndex).get(columnIndex);
 		
 		
 	}
